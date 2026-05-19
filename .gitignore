@@ -62,3 +62,6 @@ exports/
 
 # MCP local config
 .mcp.json
+
+# Smoke eval results
+.smoke-eval/

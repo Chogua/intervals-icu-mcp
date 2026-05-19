@@ -73,6 +73,19 @@ run: ## Run the MCP server locally
 shell: ## Open a Python shell with the project context
 	uv run python
 
+##@ LLM smoke eval (costs API money; NOT part of `make test`)
+
+smoke-eval: ## Run smoke eval against current branch (requires ANTHROPIC_API_KEY; costs ~$0.07/run)
+	uv run python scripts/smoke_eval.py
+
+smoke-eval/save: ## Run smoke eval and save results to .smoke-eval/<branch>.json
+	@mkdir -p .smoke-eval
+	@branch=$$(git rev-parse --abbrev-ref HEAD | tr / -); \
+		uv run python scripts/smoke_eval.py --output .smoke-eval/$$branch.json
+
+smoke-eval/diff: ## Diff two smoke-eval result files (usage: make smoke-eval/diff BASE=a.json BRANCH=b.json)
+	uv run python scripts/smoke_eval_diff.py $(BASE) $(BRANCH)
+
 ##@ Docker
 
 docker/build: ## Build Docker image locally
