@@ -9,7 +9,7 @@ A Model Context Protocol (MCP) server for Intervals.icu integration. Access your
 > Originally based on [eddmann/intervals-icu-mcp](https://github.com/eddmann/intervals-icu-mcp) (MIT licensed). This project is an independent continuation with significant bug fixes and new features — see [CHANGELOG.md](https://github.com/hhopke/intervals-icu-mcp/blob/main/CHANGELOG.md) for details.
 
 [![Tests](https://github.com/hhopke/intervals-icu-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/hhopke/intervals-icu-mcp/actions/workflows/test.yml)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![intervals-icu-mcp MCP server](https://glama.ai/mcp/servers/hhopke/intervals-icu-mcp/badges/score.svg)](https://glama.ai/mcp/servers/hhopke/intervals-icu-mcp)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/hhopke/intervals-icu-mcp/blob/main/LICENSE)
 [![Docker](https://img.shields.io/badge/docker-ghcr.io-blue?logo=docker)](https://github.com/hhopke/intervals-icu-mcp/pkgs/container/intervals-icu-mcp)
 
@@ -19,7 +19,9 @@ A Model Context Protocol (MCP) server for Intervals.icu integration. Access your
 
 ## Quick Start
 
-Running with Claude Desktop, in 30 seconds:
+[![Install in Cursor](https://cursor.com/deeplink/mcp-install-light.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=intervals-icu&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJpbnRlcnZhbHMtaWN1LW1jcCJdLCJlbnYiOnsiSU5URVJWQUxTX0lDVV9BUElfS0VZIjoiIiwiSU5URVJWQUxTX0lDVV9BVEhMRVRFX0lEIjoiIn19)
+
+Or for Claude Desktop, in 30 seconds:
 
 1. Get your [API key and athlete ID](#intervalsicu-api-key-setup)
 2. Add this to your Claude Desktop config:
