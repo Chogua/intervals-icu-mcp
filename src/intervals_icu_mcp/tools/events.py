@@ -20,7 +20,7 @@ async def get_calendar_events(
 
     Use for "what's on my calendar?", "show this week", broad calendar
     queries. For just the planned WORKOUT entries (filtered) use
-    get_upcoming_workouts. For one specific event by ID use get_event.
+    icu_get_upcoming_workouts. For one specific event by ID use get_event.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")
@@ -159,7 +159,7 @@ async def get_upcoming_workouts(
     """Fetch only the planned WORKOUT entries from the upcoming calendar (filters out notes, races, goals).
 
     Use for "what's my next workout?", "what training is planned". For
-    every calendar entry type use get_calendar_events.
+    every calendar entry type use icu_get_calendar_events.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")

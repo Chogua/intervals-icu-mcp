@@ -227,7 +227,7 @@ async def create_custom_item(
 async def update_custom_item(
     item_id: Annotated[int, "Custom item ID to update"],
     name: Annotated[str | None, "Updated name"] = None,
-    item_type: Annotated[str | None, "Updated type (see create_custom_item for values)"] = None,
+    item_type: Annotated[str | None, "Updated type (see icu_create_custom_item for values)"] = None,
     description: Annotated[str | None, "Updated description"] = None,
     content: Annotated[
         dict[str, Any] | None,

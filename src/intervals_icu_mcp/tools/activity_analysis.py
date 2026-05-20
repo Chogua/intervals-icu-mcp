@@ -284,7 +284,7 @@ async def search_intervals(
 ) -> str:
     """Search intervals ACROSS ALL the athlete's activities (cross-activity).
 
-    Different from get_activity_intervals (single-activity). Use to track
+    Different from icu_get_activity_intervals (single-activity). Use to track
     progress on a workout type ("all my threshold intervals over the last
     year") or find comparable historical sessions.
     """
@@ -345,7 +345,7 @@ async def get_power_histogram(
 ) -> str:
     """Time-in-zone DISTRIBUTION of power within a single activity (histogram buckets, time per bucket).
 
-    Different from get_power_curves (best efforts across many activities).
+    Different from icu_get_power_curves (best efforts across many activities).
     Use for "how was my workout intensity distributed?", training-zone
     breakdown.
     """
@@ -401,7 +401,7 @@ async def get_hr_histogram(
 ) -> str:
     """Time-in-zone DISTRIBUTION of heart rate within a single activity (histogram buckets, time per bucket).
 
-    Different from get_hr_curves (best efforts across many activities).
+    Different from icu_get_hr_curves (best efforts across many activities).
     Use for cardiovascular load breakdown and HR-zone time-in-zone.
     """
     assert ctx is not None
@@ -456,9 +456,9 @@ async def get_pace_histogram(
 ) -> str:
     """Time-in-zone DISTRIBUTION of pace within a single running activity (histogram buckets, time per bucket).
 
-    Different from get_pace_curves (best efforts across many activities).
+    Different from icu_get_pace_curves (best efforts across many activities).
     Use for pace-distribution / consistency analysis. For elevation-
-    normalized pace use get_gap_histogram.
+    normalized pace use icu_get_gap_histogram.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")
@@ -510,7 +510,7 @@ async def get_gap_histogram(
     """Time-in-zone DISTRIBUTION of grade-adjusted pace (GAP) within a single activity — elevation-normalized.
 
     Use for trail running where raw pace is misleading. For raw (non-
-    elevation-normalized) pace use get_pace_histogram.
+    elevation-normalized) pace use icu_get_pace_histogram.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")

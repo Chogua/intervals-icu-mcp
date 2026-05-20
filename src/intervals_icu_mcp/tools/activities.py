@@ -20,8 +20,8 @@ async def get_recent_activities(
     """List the athlete's most recent activities (default last 30 days) — LIGHT summary per item (distance, duration, power, HR, training load).
 
     Use for "what have I done recently?", "show last week's rides". For
-    one specific activity by ID use get_activity_details; to search by
-    name/tag use search_activities.
+    one specific activity by ID use icu_get_activity_details; to search by
+    name/tag use icu_search_activities.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")
@@ -100,8 +100,8 @@ async def get_activity_details(
     """Fetch the headline SUMMARY of one activity — name, sport, date, distance, duration, training load, weather, plus all top-level metrics in a single JSON blob.
 
     Use for "how was my ride?", "tell me about activity X". For lap-by-lap or
-    per-interval breakdown use get_activity_intervals; for second-by-second
-    time-series use get_activity_streams.
+    per-interval breakdown use icu_get_activity_intervals; for second-by-second
+    time-series use icu_get_activity_streams.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")

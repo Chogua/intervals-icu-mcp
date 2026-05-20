@@ -198,9 +198,9 @@ async def create_event(
 ) -> str:
     """Create ONE new calendar event from scratch.
 
-    For two or more events in a single call, prefer bulk_create_events
+    For two or more events in a single call, prefer icu_bulk_create_events
     over a loop. For copying existing events forward in time (repeating
-    a workout for N weeks), use duplicate_events — that tool reuses an
+    a workout for N weeks), use icu_duplicate_events — that tool reuses an
     existing event's payload instead of taking new fields.
 
     For category guidance and the training_availability enum, read the
@@ -473,8 +473,8 @@ async def bulk_create_events(
 ) -> str:
     """Create MANY new calendar events in a single batch call (more efficient than looping create_event).
 
-    Accepts a JSON array of event objects, each shaped like a create_event
-    payload. For copying existing events forward use duplicate_events
+    Accepts a JSON array of event objects, each shaped like an icu_create_event
+    payload. For copying existing events forward use icu_duplicate_events
     instead — that reuses payloads rather than taking new fields. See
     intervals-icu://event-categories and intervals-icu://workout-syntax
     for the referenced enums and DSL.
@@ -685,7 +685,7 @@ async def duplicate_events(
 
     Use when the user says "repeat this workout for the next 4 weeks",
     "duplicate Monday's run on the next 3 Mondays". Reuses the existing
-    events' payloads — different from create_event / bulk_create_events,
+    events' payloads — different from icu_create_event / icu_bulk_create_events,
     which both build NEW events from scratch.
     """
     assert ctx is not None
@@ -773,9 +773,9 @@ async def apply_training_plan(
 ) -> str:
     """Schedule an entire training plan (workout-library folder) onto the athlete's calendar starting on a chosen date.
 
-    Use after get_workout_library to find a plan's folder_id. Different
-    from create_event / bulk_create_events (which build new events) and
-    from duplicate_events (which copies existing).
+    Use after icu_get_workout_library to find a plan's folder_id. Different
+    from icu_create_event / icu_bulk_create_events (which build new events) and
+    from icu_duplicate_events (which copies existing).
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")

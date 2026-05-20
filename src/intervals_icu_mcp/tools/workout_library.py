@@ -14,8 +14,8 @@ async def get_workout_library(
 ) -> str:
     """List all workout-library folders + training plans the athlete has access to (personal, shared, and followed plans).
 
-    Each folder ID can be passed to get_workouts_in_folder to see its
-    contents, or to apply_training_plan to schedule it onto the calendar.
+    Each folder ID can be passed to icu_get_workouts_in_folder to see its
+    contents, or to icu_apply_training_plan to schedule it onto the calendar.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")

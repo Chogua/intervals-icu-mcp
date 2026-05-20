@@ -34,7 +34,7 @@ async def get_power_curves(
 
     Use for FTP estimation, peak-power tracking, strengths/weaknesses
     across duration profiles. For time-in-zone *distribution* within a
-    single activity, use get_power_histogram instead.
+    single activity, use icu_get_power_histogram instead.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")

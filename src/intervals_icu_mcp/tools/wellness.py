@@ -192,7 +192,7 @@ async def get_wellness_data(
     """Fetch wellness records over a RANGE of recent days (default last 7).
 
     Use for trends, weekly summaries, "how has my sleep been this week?",
-    recovery curves. For a single specific date use get_wellness_for_date
+    recovery curves. For a single specific date use icu_get_wellness_for_date
     instead — this tool always returns a multi-day list.
     """
     assert ctx is not None
@@ -291,7 +291,7 @@ async def get_wellness_for_date(
 
     Use when the user names a date — "show my HRV for Monday",
     "wellness on 2026-03-15", "how did I sleep last Thursday?". For
-    ranges, weeks, or trends use get_wellness_data.
+    ranges, weeks, or trends use icu_get_wellness_data.
     """
     assert ctx is not None
     config: ICUConfig = await ctx.get_state("config")
