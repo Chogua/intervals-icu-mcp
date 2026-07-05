@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `client.get_activities()` now passes `limit` to the API as a query param instead of fetching the entire date range and truncating client-side. Verified against the live API that server-side `limit` keeps the newest N in descending order — identical results, far less data over the wire for wide date windows (#80).
 
 ### Fixed
+- Corrected the distance units in the `intervals-icu://workout-syntax` resource: meters are `mtr` (e.g. `400mtr`) and yards are `yrd`, not the ambiguous `m`/`yd`. Intervals.icu parses a bare `m` as **minutes**, so the previous docs led LLMs to write `400m` for a 400 m swim step — parsed as 400 minutes, producing wildly inflated durations and distances (a 2500 m swim came out as ~417 km / ~41 h). All swim/run examples now use `mtr`, and a note spells out the `m`-means-minutes rule (#75).
 - ATP weeks starting on a shared phase-boundary date (e.g. Base ends and Build starts on the same day) are now assigned to the newer phase (#73).
 
 ## [4.0.0] — 2026-06-18
