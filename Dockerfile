@@ -22,7 +22,7 @@ COPY pyproject.toml uv.lock* README.md ./
 COPY src/ ./src/
 
 # Install dependencies into a virtual environment
-RUN uv sync --frozen --no-dev
+RUN uv sync --no-dev
 
 # Final stage - minimal runtime image
 FROM --platform=$TARGETPLATFORM python:3.11-slim
